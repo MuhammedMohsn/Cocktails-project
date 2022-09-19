@@ -29,9 +29,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
-
-
-</Fragment >
+   </Fragment >
   );
 }
 
