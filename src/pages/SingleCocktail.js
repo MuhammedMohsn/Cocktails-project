@@ -1,20 +1,21 @@
 import React, { Fragment } from 'react'
 import Products from '../data'
 import { Link, useParams } from 'react-router-dom'
-import styles from '../App.css'
 function SingleCocktail() {
   const { id } = useParams();
-  
-  const product = Products.find((product) => {return product.id === parseInt(id)});
-  const { ide,img, name,title,type } = product;
-  return (
+
+  const product = Products.find((product) => { return product.id === parseInt(id) });
+  const { img, name, title, type } = product;
+  return (<Fragment>
     <section className='section_product'>
-      <img src={img} alt={name} />
-      <div className='info'><h5>{name}</h5>
-      <h4>{title}</h4>
-      <h4>{type}</h4>
-      <Link to='/'>back to products</Link></div>
+      <img src={img} alt={name} className='cocktail_img' />
+      <div className='info'><h3>The cocktail name is : {name}</h3>
+        <h3>The cocktail title is : {title}</h3>
+        <h3>The cocktail type is : {type}</h3>
+        <Link to='/Cocktails'>back to Cocktails</Link></div>
     </section>
+  </Fragment>
+
   );
 }
 
